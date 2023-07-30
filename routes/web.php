@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +21,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/tables', function () {
-    return view('contents.tables', [
-    "title"=> "Tables",
-    "name" => "Ya'kub Darussalam" ]);
-});
+Route::get('/tables', [PostController::class, 'index']);
